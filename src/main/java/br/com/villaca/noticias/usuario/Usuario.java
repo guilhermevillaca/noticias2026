@@ -17,6 +17,8 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String login;
+
     private String senha;
 
     @JoinColumn(referencedColumnName = "id", name="pessoa_id", nullable = false)

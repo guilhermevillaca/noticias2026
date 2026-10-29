@@ -17,6 +17,7 @@ public class UsuarioMapper implements GenericMapper<Usuario, UsuarioDTO> {
     public UsuarioDTO toDTO(Usuario usuario) {
         return new UsuarioDTO(
                 usuario.getId(),
+                usuario.getLogin(),
                 null,
                 usuario.getPessoa().getId());
     }
@@ -26,6 +27,7 @@ public class UsuarioMapper implements GenericMapper<Usuario, UsuarioDTO> {
         Pessoa pessoa = pessoaRepository.getReferenceById(usuarioDTO.pessoa_id());
         return new Usuario(
                 usuarioDTO.id(),
+                usuarioDTO.login(),
                 usuarioDTO.senha(),
                 pessoa
         );
